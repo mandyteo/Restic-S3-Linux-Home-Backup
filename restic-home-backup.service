@@ -1,0 +1,20 @@
+[Unit]
+Description=Restic backup of home to S3
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+
+User=root
+Group=root
+
+TimeoutStartSec=6h
+
+Restart=on-failure
+RestartSec=60m
+
+ExecStart=/usr/local/sbin/restic-home-backup.sh
+
+StandardOutput=journal
+StandardError=journal
