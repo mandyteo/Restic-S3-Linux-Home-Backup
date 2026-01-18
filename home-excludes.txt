@@ -17,3 +17,5 @@
 *torrent*
 *GITLOCAL*
 */Obsidian/*
+*.deb
+*.rpm
